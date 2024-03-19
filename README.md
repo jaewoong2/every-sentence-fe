@@ -1,22 +1,26 @@
-# next-template
+# 매일 문장
 
-A Next.js 13 template for building apps with Radix UI and Tailwind CSS.
+## 매일 일본어를 보내주는 서비스 프론트엔드 레포지토리
 
-## Usage
+## TODO 기능 구현
 
-```bash
-npx create-next-app -e https://github.com/shadcn/next-template
-```
+### MVP
 
-## Features
+1. 등록 버튼 구현
+    - 등록 버튼 클릭 시 등록 모달 
+    - 등록 모달은 Query 를 통해서 여는 방법으로 가도 괜찮을 것 같고?
 
-- Next.js 13 App Directory
-- Radix UI Primitives
-- Tailwind CSS
-- Icons from [Lucide](https://lucide.dev)
-- Dark mode with `next-themes`
-- Tailwind CSS class sorting, merging and linting.
+2. 등록 후, 슬랙 회원가입 유도
 
-## License
+3. 마이 페이지
+    - 몇시, 문장 or 단어 중에 어떤 거를 선택 할지 세팅
 
-Licensed under the [MIT license](https://github.com/shadcn/ui/blob/main/LICENSE.md).
+    - 현재 어떤 문장들을 받았는지
+
+### NEXT TODO
+
+1. (단어)문장 Quiz 기능
+
+2. (단어)문장 등록 기능
+
+3. 단어장 기능# every-sentence-fe
