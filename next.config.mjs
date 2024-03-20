@@ -5,7 +5,6 @@ const nextConfig = {
   experimental: {
     appDir: true,
   },
-  assetPrefix: "/dev/",
 }
 
 export default nextConfig

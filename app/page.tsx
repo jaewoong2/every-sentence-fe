@@ -1,8 +1,11 @@
-import { PageProps } from "@/.next/types/app/page"
+import Image from "next/image"
+import { PageProps } from "@/types"
 
 import { RegisterModal } from "@/components/blocks/RegisterModal"
 
-export default function IndexPage({ searchParams }: PageProps) {
+export default function IndexPage({
+  searchParams,
+}: PageProps<{}, { regist: "new" | "login" }>) {
   const { regist } = searchParams
 
   return (
@@ -27,8 +30,10 @@ export default function IndexPage({ searchParams }: PageProps) {
         </div>
       </section>
       <section className="container grid h-full items-center justify-center gap-6 pb-8 pt-6 md:py-10">
-        <img
-          src="slack.png"
+        <Image
+          width={500}
+          height={500}
+          src="/slack.png"
           alt="slack"
           className="h-full w-auto object-contain"
         />

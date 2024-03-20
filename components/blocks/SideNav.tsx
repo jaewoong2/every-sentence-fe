@@ -24,7 +24,7 @@ const SideNav = () => {
       {accessToken ? (
         <MenuNavigationDropdown />
       ) : (
-        <Link href={"/?regist=login"} rel="noreferrer">
+        <Link href={"?regist=login"}>
           <div
             className={buttonVariants({
               size: "icon",

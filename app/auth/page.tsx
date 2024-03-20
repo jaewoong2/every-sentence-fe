@@ -3,7 +3,7 @@
 import React, { useEffect } from "react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
-import { PageProps } from "@/.next/types/app/page"
+import { PageProps } from "@/types"
 
 import userStorage from "@/lib/storage/userstorage"
 import useGetRegistLink from "@/hooks/useGetRegistLink"
@@ -12,7 +12,7 @@ import useGetUser from "@/hooks/useGetUser"
 const TOKEN_KEY = process.env.NEXT_PUBLIC_JWT_TOKEN_KEY
 const MY_PAGE_URL = "/"
 
-const AuthPage = ({ searchParams }: PageProps) => {
+const AuthPage = ({ searchParams }: PageProps<{}, { token?: string }>) => {
   const { token } = searchParams
   const { data } = useGetRegistLink()
   const { data: userData } = useGetUser()
