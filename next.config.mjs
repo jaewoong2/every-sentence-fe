@@ -1,10 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  rewrites() {
+    return [
+      {
+        source: "/api/:path*/",
+        destination: `${process.env.NEXT_PUBLIC_API_BASEURL}/api/:path*/`,
+      },
+    ]
+  },
   output: "standalone",
   reactStrictMode: true,
-  experimental: {
-    appDir: true,
-  },
 }
 
 export default nextConfig

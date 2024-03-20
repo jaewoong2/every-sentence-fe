@@ -2,7 +2,8 @@ import axios, { AxiosError, AxiosInstance } from "axios"
 
 import userStorage from "@/lib/storage/userstorage"
 
-const TOKEN_KEY = process.env.NEXT_PUBLIC_JWT_TOKEN_KEY
+const JWT_TOKEN_KEY = process.env.JWT_TOKEN_KEY
+const API_BASEURL = process.env.API_BASEURL
 
 const setInterceptors = (instance: AxiosInstance) => {
   instance.interceptors.response.use(
@@ -17,7 +18,7 @@ const setInterceptors = (instance: AxiosInstance) => {
     (config) => {
       if (typeof window === "undefined") return config
       if (typeof localStorage === "undefined") return config
-      if (!TOKEN_KEY) return config
+      if (!JWT_TOKEN_KEY) return config
 
       const token = userStorage.getAccessToken()
 
@@ -35,9 +36,9 @@ const setInterceptors = (instance: AxiosInstance) => {
 
 const createInstance = () => {
   const instance = axios.create({
-    baseURL: process.env.NEXT_PUBLIC_API_BASEURL,
     timeout: 2000,
   })
+
   setInterceptors(instance)
 
   return instance
