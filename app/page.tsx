@@ -33,7 +33,7 @@ export default function IndexPage({
         <Image
           width={500}
           height={500}
-          src="/slack.png"
+          src="https://images.prlc.kr/slack.png"
           alt="slack"
           className="h-full w-auto object-contain"
         />

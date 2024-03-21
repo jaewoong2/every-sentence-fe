@@ -8,6 +8,7 @@ const nextConfig = {
       },
     ]
   },
+  images: { domains: ["images.prlc.kr"] },
   output: "standalone",
   reactStrictMode: true,
 }
