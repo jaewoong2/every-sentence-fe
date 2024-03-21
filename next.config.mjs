@@ -4,7 +4,9 @@ const nextConfig = {
     return [
       {
         source: "/api/:path*/",
-        destination: `${process.env.NEXT_PUBLIC_API_BASEURL}/api/:path*/`,
+        destination: `${
+          process.env.NEXT_PUBLIC_API_BASEURL ?? "https://api.prlc.kr"
+        }/api/:path*/`,
       },
     ]
   },
