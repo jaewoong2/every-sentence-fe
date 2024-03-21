@@ -82,9 +82,9 @@ jobs:
           fi
       - name: Setup API Gateway
         run: |
-          API_ID=$(aws apigateway get-rest-apis --query "items[?name==$AWS_API_GATEWAY_NAME].id" --output text)
+          API_ID=$(aws apigateway get-rest-apis --query "items[?name=='$AWS_API_GATEWAY_NAME'].id" --output text)
           if [ -z "$API_ID" ]; then
-            API_ID=$(aws apigateway create-rest-api --name $AWS_API_GATEWAY_NAME --description "API for Lambda" --query 'id' --output text)
+            API_ID=$(aws apigateway create-rest-api --name $AWS_API_GATEWAY_NAME --description "API Gateway For Prlc NextJS Lambda" --query 'id' --output text)
           fi
           PARENT_RESOURCE_ID=$(aws apigateway get-resources --rest-api-id $API_ID --query 'items[?path==`/`].id' --output text)
           RESOURCE_ID=$(aws apigateway create-resource --rest-api-id $API_ID --parent-id $PARENT_RESOURCE_ID --path-part "{proxy+}" --query 'id' --output text)
